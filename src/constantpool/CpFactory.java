@@ -1,6 +1,4 @@
-package cp_info;
-
-import cp_info.bean.*;
+package constantpool;
 
 import java.io.DataInputStream;
 import java.io.IOException;

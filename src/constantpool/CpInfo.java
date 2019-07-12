@@ -1,4 +1,4 @@
-package cp_info.bean;
+package constantpool;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -15,4 +15,6 @@ public abstract class CpInfo {
     }
 
     public abstract void read(DataInputStream in) throws IOException;
+
+    public abstract String toString(CpInfo[] constantPool);
 }

@@ -1,4 +1,4 @@
-package cp_info.bean;
+package constantpool;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -24,5 +24,15 @@ public class Utf8Info extends CpInfo {
             throw new IOException("read Utf-8 String error");
         }
         string = new String(bytes);
+    }
+
+    @Override
+    public String toString(CpInfo[] constantPool) {
+        return "\t"+string;
+    }
+
+    @Override
+    public String toString() {
+        return string;
     }
 }

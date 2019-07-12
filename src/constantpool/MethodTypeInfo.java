@@ -1,15 +1,10 @@
-package cp_info.bean;
+package constantpool;
 
 import java.io.DataInputStream;
 import java.io.IOException;
 
-public class NameAndTypeInfo extends CpInfo {
-    private short nameIndex;
+public class MethodTypeInfo extends CpInfo {
     private short descriptorIndex;
-
-    public short getNameIndex() {
-        return nameIndex;
-    }
 
     public short getDescriptorIndex() {
         return descriptorIndex;
@@ -17,7 +12,11 @@ public class NameAndTypeInfo extends CpInfo {
 
     @Override
     public void read(DataInputStream in) throws IOException {
-        nameIndex = in.readShort();
         descriptorIndex = in.readShort();
+    }
+
+    @Override
+    public String toString(CpInfo[] constantPool) {
+        return "\t#"+descriptorIndex+"\t//"+constantPool[descriptorIndex];
     }
 }

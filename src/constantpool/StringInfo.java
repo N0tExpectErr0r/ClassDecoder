@@ -1,4 +1,4 @@
-package cp_info.bean;
+package constantpool;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -13,5 +13,10 @@ public class StringInfo extends CpInfo{
     @Override
     public void read(DataInputStream in) throws IOException {
         stringIndex = in.readShort();
+    }
+
+    @Override
+    public String toString(CpInfo[] constantPool) {
+        return "\t#"+stringIndex+"\t//"+constantPool[stringIndex];
     }
 }
