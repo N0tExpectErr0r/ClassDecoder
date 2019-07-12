@@ -17,6 +17,6 @@ public class FloatInfo extends CpInfo {
 
     @Override
     public String toString(CpInfo[] constantPool) {
-        return "\t"+value;
+        return "FloatInfo\t"+value;
     }
 }

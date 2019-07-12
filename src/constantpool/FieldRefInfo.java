@@ -23,11 +23,11 @@ public class FieldRefInfo extends CpInfo{
 
     @Override
     public String toString(CpInfo[] constantPool) {
-        ClazzInfo clazzInfo = (ClazzInfo) constantPool[clazzIndex];
+        ClazzInfo clazzInfo = (ClazzInfo) constantPool[clazzIndex-1];
         short clazzNameIndex = clazzInfo.getNameIndex();
-        NameAndTypeInfo nameAndTypeInfo = (NameAndTypeInfo) constantPool[nameAndTypeIndex];
+        NameAndTypeInfo nameAndTypeInfo = (NameAndTypeInfo) constantPool[nameAndTypeIndex-1];
         short nameIndex = nameAndTypeInfo.getNameIndex();
         short descriptorIndex = nameAndTypeInfo.getDescriptorIndex();
-        return "\t#"+clazzIndex+".#"+nameAndTypeIndex+"\t//"+constantPool[clazzNameIndex]+" "+constantPool[nameIndex]+" "+constantPool[descriptorIndex];
+        return "FieldRefInfo\t#"+clazzIndex+".#"+nameAndTypeIndex+"\t// "+constantPool[clazzNameIndex-1]+"."+constantPool[nameIndex-1]+":"+constantPool[descriptorIndex-1];
     }
 }

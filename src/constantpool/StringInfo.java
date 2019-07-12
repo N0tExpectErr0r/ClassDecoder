@@ -17,6 +17,6 @@ public class StringInfo extends CpInfo{
 
     @Override
     public String toString(CpInfo[] constantPool) {
-        return "\t#"+stringIndex+"\t//"+constantPool[stringIndex];
+        return "StringInfo\t#"+stringIndex+"\t// "+constantPool[stringIndex-1];
     }
 }

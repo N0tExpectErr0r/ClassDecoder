@@ -16,7 +16,9 @@ public abstract class AttributeInfo {
         return attributeLength;
     }
 
-    public String getAttributeName(CpInfo[] constantPool)
+    public String getAttributeName(CpInfo[] constantPool) {
+        return "";
+    }
 
     public abstract void read(DataInputStream in);
 }

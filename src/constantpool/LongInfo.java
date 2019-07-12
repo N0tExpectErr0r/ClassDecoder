@@ -17,6 +17,6 @@ public class LongInfo extends CpInfo {
 
     @Override
     public String toString(CpInfo[] constantPool) {
-        return "\t"+value;
+        return "LongInfo\t"+value;
     }
 }

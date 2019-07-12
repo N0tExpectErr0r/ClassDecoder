@@ -28,7 +28,7 @@ public class Utf8Info extends CpInfo {
 
     @Override
     public String toString(CpInfo[] constantPool) {
-        return "\t"+string;
+        return "Utf8Info\t"+string;
     }
 
     @Override

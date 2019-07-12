@@ -17,6 +17,6 @@ public class IntegerInfo extends CpInfo {
 
     @Override
     public String toString(CpInfo[] constantPool) {
-        return "\t"+value;
+        return "IntegerInfo\t"+value;
     }
 }

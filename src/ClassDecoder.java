@@ -9,7 +9,7 @@ import java.io.*;
 
 public class ClassDecoder {
 
-    public void decode(String path) {
+    public ClassFile decode(String path) {
         try {
             DataInputStream in = new DataInputStream(new FileInputStream(new File(path)));
             ClassFile file = new ClassFile();
@@ -60,8 +60,18 @@ public class ClassDecoder {
                 attributes[i] = AttributeFactory.readAttribute(in);
             }
             file.setAttributes(attributes);
+            return file;
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static void main(String[] args) {
+        ClassFile classFile = new ClassDecoder().decode("Test.class");
+        for (int i = 0; i < classFile.getConstantCount()-1; i++) {
+            CpInfo[] constantPool = classFile.getConstantPool();
+            System.out.println("#"+(i+1)+" = "+constantPool[i].toString(constantPool));
         }
     }
 }

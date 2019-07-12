@@ -17,6 +17,6 @@ public class ClazzInfo extends CpInfo {
 
     @Override
     public String toString(CpInfo[] constantPool) {
-        return "\t#"+nameIndex+"\t//"+constantPool[nameIndex];
+        return "ClassInfo\t#"+nameIndex+"\t// "+constantPool[nameIndex-1];
     }
 }

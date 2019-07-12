@@ -17,6 +17,6 @@ public class MethodTypeInfo extends CpInfo {
 
     @Override
     public String toString(CpInfo[] constantPool) {
-        return "\t#"+descriptorIndex+"\t//"+constantPool[descriptorIndex];
+        return "MethodTypeInfo\t#"+descriptorIndex+"\t// "+constantPool[descriptorIndex-1];
     }
 }

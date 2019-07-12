@@ -23,6 +23,6 @@ public class NameAndTypeInfo extends CpInfo {
 
     @Override
     public String toString(CpInfo[] constantPool) {
-        return "\t#"+nameIndex+":#"+descriptorIndex+"\t//"+constantPool[nameIndex]+" "+constantPool[descriptorIndex];
+        return "NameAndTypeInfo\t#"+nameIndex+":#"+descriptorIndex+"\t// "+constantPool[nameIndex-1]+":"+constantPool[descriptorIndex-1];
     }
 }
