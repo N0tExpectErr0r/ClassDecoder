@@ -1,22 +1,22 @@
-package constantpool;
+package com.n0texpecterr0r.classdecoder.constantpool;
 
 import java.io.DataInputStream;
 import java.io.IOException;
 
-public class LongInfo extends CpInfo {
-    private long value;
+public class DoubleInfo extends CpInfo {
+    private double value;
 
-    public long getValue() {
+    public double getValue() {
         return value;
     }
 
     @Override
     public void read(DataInputStream in) throws IOException {
-        value = in.readLong();
+        value = in.readDouble();
     }
 
     @Override
     public String toString(CpInfo[] constantPool) {
-        return "LongInfo\t"+value;
+        return "Double\t"+value;
     }
 }

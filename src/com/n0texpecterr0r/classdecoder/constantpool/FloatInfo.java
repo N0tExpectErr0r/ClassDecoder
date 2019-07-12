@@ -1,22 +1,22 @@
-package constantpool;
+package com.n0texpecterr0r.classdecoder.constantpool;
 
 import java.io.DataInputStream;
 import java.io.IOException;
 
-public class IntegerInfo extends CpInfo {
-    private int value;
+public class FloatInfo extends CpInfo {
+    private float value;
 
-    public int getValue() {
+    public float getValue() {
         return value;
     }
 
     @Override
     public void read(DataInputStream in) throws IOException {
-        value = in.readInt();
+        value = in.readFloat();
     }
 
     @Override
     public String toString(CpInfo[] constantPool) {
-        return "IntegerInfo\t"+value;
+        return "FloatInfo\t"+value;
     }
 }

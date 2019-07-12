@@ -1,7 +1,9 @@
-import attribute.AttributeInfo;
-import constantpool.CpInfo;
-import fieldinfo.FieldInfo;
-import methodinfo.MethodInfo;
+package com.n0texpecterr0r.classdecoder;
+
+import com.n0texpecterr0r.classdecoder.attribute.AttributeInfo;
+import com.n0texpecterr0r.classdecoder.constantpool.CpInfo;
+import com.n0texpecterr0r.classdecoder.fieldinfo.FieldInfo;
+import com.n0texpecterr0r.classdecoder.methodinfo.MethodInfo;
 
 public class ClassFile {
     private short minorVersion;

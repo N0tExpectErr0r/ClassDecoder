@@ -1,9 +1,9 @@
-package constantpool;
+package com.n0texpecterr0r.classdecoder.constantpool;
 
 import java.io.DataInputStream;
 import java.io.IOException;
 
-public class MethodRefInfo extends CpInfo {
+public class FieldRefInfo extends CpInfo{
     private short clazzIndex;
     private short nameAndTypeIndex;
 
@@ -28,6 +28,6 @@ public class MethodRefInfo extends CpInfo {
         NameAndTypeInfo nameAndTypeInfo = (NameAndTypeInfo) constantPool[nameAndTypeIndex-1];
         short nameIndex = nameAndTypeInfo.getNameIndex();
         short descriptorIndex = nameAndTypeInfo.getDescriptorIndex();
-        return "MethodRefInfo\t#"+clazzIndex+".#"+nameAndTypeIndex+"\t// "+constantPool[clazzNameIndex-1]+"."+constantPool[nameIndex-1]+":"+constantPool[descriptorIndex-1];
+        return "FieldRefInfo\t#"+clazzIndex+".#"+nameAndTypeIndex+"\t// "+constantPool[clazzNameIndex-1]+"."+constantPool[nameIndex-1]+":"+constantPool[descriptorIndex-1];
     }
 }

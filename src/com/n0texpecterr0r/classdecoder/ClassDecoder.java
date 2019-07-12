@@ -1,13 +1,18 @@
-import attribute.AttributeFactory;
-import attribute.AttributeInfo;
-import constantpool.CpFactory;
-import constantpool.CpInfo;
-import fieldinfo.FieldInfo;
-import methodinfo.MethodInfo;
+package com.n0texpecterr0r.classdecoder;
+
+import com.n0texpecterr0r.classdecoder.attribute.AttributeInfo;
+import com.n0texpecterr0r.classdecoder.constantpool.CpInfo;
+import com.n0texpecterr0r.classdecoder.fieldinfo.FieldInfo;
+import com.n0texpecterr0r.classdecoder.methodinfo.MethodInfo;
 
 import java.io.*;
 
 public class ClassDecoder {
+    private static CpInfo[] constantPool;
+
+    public static CpInfo[] getConstantPool() {
+        return constantPool;
+    }
 
     public ClassFile decode(String path) {
         try {
@@ -23,6 +28,7 @@ public class ClassDecoder {
             for (int i = 0; i < constantCount - 1; i++) {
                 cpInfos[i] = CpFactory.readCpInfo(in);
             }
+            constantPool = cpInfos;
             file.setConstantPool(cpInfos);
 
             file.setAccessFlags(in.readShort());

@@ -1,4 +1,4 @@
-package constantpool;
+package com.n0texpecterr0r.classdecoder.constantpool;
 
 import java.io.DataInputStream;
 import java.io.IOException;
