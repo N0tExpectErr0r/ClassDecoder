@@ -1,5 +1,6 @@
 package com.n0texpecterr0r.classdecoder;
 
+import com.n0texpecterr0r.classdecoder.accessflag.AccessFlagInfo;
 import com.n0texpecterr0r.classdecoder.attribute.AttributeInfo;
 import com.n0texpecterr0r.classdecoder.constantpool.CpInfo;
 import com.n0texpecterr0r.classdecoder.fieldinfo.FieldInfo;
@@ -10,7 +11,7 @@ public class ClassFile {
     private short majorVersion;
     private short constantCount;
     private CpInfo[] constantPool;
-    private short accessFlags;
+    private AccessFlagInfo accessFlags;
     private short thisClazz;
     private short superClazz;
     private short interfaceCount;
@@ -54,11 +55,11 @@ public class ClassFile {
         this.constantPool = constantPool;
     }
 
-    public short getAccessFlags() {
+    public AccessFlagInfo getAccessFlags() {
         return accessFlags;
     }
 
-    public void setAccessFlags(short accessFlags) {
+    public void setAccessFlags(AccessFlagInfo accessFlags) {
         this.accessFlags = accessFlags;
     }
 

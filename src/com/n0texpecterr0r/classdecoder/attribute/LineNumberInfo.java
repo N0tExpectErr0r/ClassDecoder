@@ -21,4 +21,11 @@ public class LineNumberInfo {
         lineNumber.lineNumber = in.readShort();
         return lineNumber;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\t").append("line ").append(lineNumber).append(": ").append(startPc);
+        return sb.toString();
+    }
 }

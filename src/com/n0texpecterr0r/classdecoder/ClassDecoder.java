@@ -1,11 +1,15 @@
 package com.n0texpecterr0r.classdecoder;
 
+import com.n0texpecterr0r.classdecoder.accessflag.AccessFlagInfo;
 import com.n0texpecterr0r.classdecoder.attribute.AttributeInfo;
 import com.n0texpecterr0r.classdecoder.constantpool.CpInfo;
 import com.n0texpecterr0r.classdecoder.fieldinfo.FieldInfo;
 import com.n0texpecterr0r.classdecoder.methodinfo.MethodInfo;
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class ClassDecoder {
     private static CpInfo[] constantPool;
@@ -31,7 +35,9 @@ public class ClassDecoder {
             constantPool = cpInfos;
             file.setConstantPool(cpInfos);
 
-            file.setAccessFlags(in.readShort());
+            AccessFlagInfo accessFlag = new AccessFlagInfo(AccessFlagInfo.TYPE_CLAZZ);
+            accessFlag.read(in);
+            file.setAccessFlags(accessFlag);
             file.setThisClazz(in.readShort());
             file.setSuperClazz(in.readShort());
 
@@ -71,13 +77,5 @@ public class ClassDecoder {
             e.printStackTrace();
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        ClassFile classFile = new ClassDecoder().decode("Test.class");
-        for (int i = 0; i < classFile.getConstantCount()-1; i++) {
-            CpInfo[] constantPool = classFile.getConstantPool();
-            System.out.println("#"+(i+1)+" = "+constantPool[i].toString(constantPool));
-        }
     }
 }

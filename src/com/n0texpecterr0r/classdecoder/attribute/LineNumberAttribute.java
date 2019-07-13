@@ -17,4 +17,14 @@ public class LineNumberAttribute extends AttributeInfo {
             lineNumberTable[i] = LineNumberInfo.read(in);
         }
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\t").append("LineNumberTable: \n");
+        for (int i = 0; i < lineNumberTableLength; i++) {
+            sb.append("\t").append(lineNumberTable[i]).append("\n");
+        }
+        return sb.toString();
+    }
 }

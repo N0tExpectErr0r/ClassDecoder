@@ -1,7 +1,6 @@
 package com.n0texpecterr0r.classdecoder.attribute;
 
 import com.n0texpecterr0r.classdecoder.AttributeFactory;
-import com.n0texpecterr0r.classdecoder.constantpool.CpInfo;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -38,5 +37,22 @@ public class CodeAttribute extends AttributeInfo {
         for (int i = 0; i < attributeCount; i++) {
             attributeInfos[i] = AttributeFactory.readAttribute(in);
         }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\tCode:\n");
+        sb.append("\tstack=").append(maxStack).append(", locals=").append(maxLocals).append("\n");
+        for (int i = 0; i < codeLength; i++) {
+            sb.append("\t\t").append(i).append(": ").append(code[i]).append("\n");
+        }
+        for (int i = 0; i < exceptionTableLength; i++) {
+            sb.append(exceptionTable[i]).append("\n");
+        }
+        for (int i = 0; i < attributeCount; i++) {
+            sb.append(attributeInfos[i]).append("\n");
+        }
+        return sb.toString();
     }
 }

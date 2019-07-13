@@ -33,4 +33,12 @@ public class ExceptionInfo {
         exception.catchType = in.readShort();
         return exception;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\tstartPc: ").append(startPc).append(", endPc: ").append(endPc)
+                .append(", handlerPc: ").append(handlerPc).append(", catchType: ").append(catchType);
+        return sb.toString();
+    }
 }
