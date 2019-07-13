@@ -2,7 +2,6 @@ package com.n0texpecterr0r.classdecoder;
 
 import com.n0texpecterr0r.classdecoder.attribute.AttributeInfo;
 import com.n0texpecterr0r.classdecoder.constantpool.CpInfo;
-import com.n0texpecterr0r.classdecoder.constantpool.FieldRefInfo;
 import com.n0texpecterr0r.classdecoder.fieldinfo.FieldInfo;
 import com.n0texpecterr0r.classdecoder.methodinfo.MethodInfo;
 
@@ -26,7 +25,7 @@ public class TestDecoder {
         }
         System.out.println("Fields: ");
         FieldInfo[] fieldInfos = classFile.getFields();
-        for (int i = 0; i < classFile.getFiledCount(); i++) {
+        for (int i = 0; i < classFile.getFieldCount(); i++) {
             System.out.println(fieldInfos[i].toString(constantPool));
         }
         System.out.println("Method: ");

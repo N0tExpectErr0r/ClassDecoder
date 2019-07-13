@@ -16,7 +16,7 @@ public class ClassFile {
     private short superClazz;
     private short interfaceCount;
     private short[] interfaces;
-    private short filedCount;
+    private short fieldCount;
     private FieldInfo[] fields;
     private short methodCount;
     private MethodInfo[] methods;
@@ -95,12 +95,12 @@ public class ClassFile {
         this.interfaces = interfaces;
     }
 
-    public short getFiledCount() {
-        return filedCount;
+    public short getFieldCount() {
+        return fieldCount;
     }
 
     public void setFieldCount(short filedCount) {
-        this.filedCount = filedCount;
+        this.fieldCount = filedCount;
     }
 
     public FieldInfo[] getFields() {
